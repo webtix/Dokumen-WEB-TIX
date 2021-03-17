@@ -1,0 +1,98 @@
+body {
+	background-color:rgb(255, 255, 128);
+}
+
+.kotak {
+	width: 650px;
+	height: 600px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 20px;
+	display: flex;
+	box-shadow: 0px 3px 34px 3px rgba(0, 0, 0, 0.61);
+	background-color: white;
+}
+
+.gambar {
+	width: 400px;
+	height: 399px;
+}
+
+.detail {
+	width: 350px;
+	height: 500px;
+	float: left;
+	text-align: center;
+	padding: 25px 20px;
+}
+
+.poster {
+	width: 300px;
+	height: 500px;
+	float: right;
+	text-align: center;
+	padding: 20px 20px;
+}
+.gambar_poster {
+	width: 250px;
+	height: 300px;
+	float: left;
+	text-align: center;
+	padding: 10px 10px;
+	border: 1px solid black;
+	margin-top:70px;
+	margin-bottom: 20px;
+	align-items:flex-start;
+}
+
+.tombol{
+	align-items:flex-end;
+}
+
+#slogan {
+	text-align: center;
+	font-size: 30px;
+	color: white;
+	text-shadow: 2px 2px 5px black;
+}
+
+
+h4 {
+	margin-top: 40px;
+	font-family: 'Kaushan Script', cursive;
+	text-align: center;
+	font-size: 60px;
+	color: white;
+	text-shadow: 2px 2px 5px black;
+}
+
+h3 {
+	font-family: 'Concert One', cursive;
+	font-size: 40px;
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+input {
+	margin-top: 10px;
+}
+
+button {
+	margin-top: 20px;
+	margin-left: 5px;
+}
+
+#forgot {
+	background-color: white;
+	
+}
+
+.sinopsis{
+	size:60px;
+}
+
+@media screen and (max-width: 800px) {
+	img {
+		visibility: hidden;
+	}
+}
