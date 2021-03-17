@@ -1,0 +1,113 @@
+h4 {
+	font-family: 'Kaushan Script', cursive;
+	text-align: center;
+	color: white;
+	text-shadow: 2px 2px 5px black;
+	font-size: 40px;
+}
+
+.navbar {
+	height: 80px;
+}
+
+.menu {
+	font-size: 20px;
+}
+
+.boxSatu {
+	padding-top: 120px;
+	text-align: center;
+	font-size: 60px;
+}
+
+#ucapan {
+	position: absolute;
+	top: 20px;
+	z-index: 2;
+	color: #fff;
+	margin-left: 20px;
+	font-size: 50px;
+	font-family: 'Caveat', cursive;
+
+}
+
+.indexSatu {
+	font-family: 'Caveat', cursive;
+}
+
+.tomPertama {
+	margin-bottom: 50px;
+	font-size: 20px;
+	border-radius: 10px;
+	padding: 5px;
+}
+
+h3 {
+	font-family: 'Caveat', cursive;
+}
+
+.tomPertama:hover,
+.cariData:hover {
+	background-color: transparent;
+}
+
+
+
+
+@media screen and (max-width: 1200px) {
+	.boxSatu {
+		font-size: 40px;
+		padding-top: 60px;
+	}
+
+	.tomPertama {
+		font-size: 15px;
+	}
+
+	.row input {
+		height: 30px;
+	}
+
+	.row button {
+		font-size: 15px;
+	}
+
+	#ucapan {
+		font-size: 40px;
+		margin-left: 5px;
+	}
+
+
+}
+
+
+@media screen and (max-width: 890px) {
+	.boxSatu {
+		font-size: 30px;
+		padding-top: 20px;
+	}
+
+	.row input {
+		height: 30px;
+	}
+
+	.row button {
+		padding: 5px;
+	}
+
+	#ucapan {
+		top: 5px;
+	}
+
+}
+
+@media screen and (max-width: 890px) {
+	.boxSatu {
+		padding-top: 10px;
+	}
+
+	#ucapan {
+		padding-top: 0px;
+		font-size: 20px;
+	}
+}

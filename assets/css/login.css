@@ -1,0 +1,79 @@
+body {
+	background-color:rgb(255, 255, 128);
+}
+
+.kotak {
+	width: 400px;
+	height: 500px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 50px;
+	display: flex;
+	box-shadow: 0px 3px 34px 3px rgba(0, 0, 0, 0.61);
+	background-color: white;
+}
+
+.gambar {
+	width: 400px;
+	height: 399px;
+}
+
+.login {
+	width: 400px;
+	height: 500px;
+	float: right;
+	text-align: center;
+	padding: 25px 30px;
+	border: 2px solid black;
+}
+
+.register {
+	width: 400px;
+	height: 500px;
+	float: left;
+	text-align: center;
+	padding: 50px 30px;
+	border: 2px solid black;
+}
+
+#slogan {
+	text-align: center;
+	font-size: 30px;
+	color: white;
+	text-shadow: 2px 2px 5px black;
+}
+
+h4 {
+	margin-top: 40px;
+	font-family: 'Kaushan Script', cursive;
+	text-align: center;
+	font-size: 60px;
+	color: white;
+	text-shadow: 2px 2px 5px black;
+}
+
+h3 {
+	font-family: 'Concert One', cursive;
+	font-size: 50px;
+	margin-bottom: 50px;
+}
+
+input {
+	margin-top: 15px;
+}
+
+button {
+	margin-top: 20px;
+	margin-left: 5px;
+}
+
+#forgot {
+	background-color: white;
+	
+}
+
+@media screen and (max-width: 800px) {
+	img {
+		visibility: hidden;
+	}
+}
