@@ -9,40 +9,38 @@ class C_login extends CI_Controller {
 
 	public function index()
 	{
+		$this->load->helper('url');
         $this->load->view("login");
 	}
 
-	function auth(){
-        $username=htmlspecialchars($this->input->post('username',TRUE),ENT_QUOTES);
-        $password=htmlspecialchars($this->input->post('password',TRUE),ENT_QUOTES);
-        $cek_user=$this->M_Login->log_user($username,$password);
-        if($cek_user->num_rows() > 0){ //jika login sebagai dosen
-            $data=$cek_user->row_array();
-            $this->session->set_userdata('masuk',TRUE);
-            if($data['TipeUser']=='manager'){ //Akses manager
-                $this->session->set_userdata('akses','1');
-                $this->session->set_userdata('ses_id',$data['IDUser']);
-                $this->session->set_userdata('ses_nama',$data['nama']);
-                redirect('c_home');
+	#LOGIN.
+	#note : CHECKING USERTYPE NOT FINISHED
+	function login_user(){
+		$username = $this->input->post('username');
+		$password = $this->input->post('password');
+		$where = array(
+			'username' => $username,
+			'password' => $password
+			);
+		$cek = $this->M_Login->cek_login("user",$where);
+		if($cek->num_rows() > 0){
+ 			//Cek USER TYPE (Placeholder, DONT FORGET TO EDIT. VERY IMPORTANTE)
+ 			#$usertype = mysqel_fetch_row($cek);
+
+			$data_session = array(
+				'nama' => $username,
+				'status' => "login"
+				);
  
-            }else if($data['TipeUser']=='admin'){ //akses admin
-                $this->session->set_userdata('akses','2');
-                $this->session->set_userdata('ses_id',$data['IDUser']);
-                $this->session->set_userdata('ses_nama',$data['nama']);
-                redirect('c_home');
-            }else if($data['TipeUser']=='user'){ //akses admin
-                $this->session->set_userdata('akses','3');
-                $this->session->set_userdata('ses_id',$data['IDUser']);
-                $this->session->set_userdata('ses_nama',$data['nama']);
-                redirect('c_home');
- 			}else{  // jika username dan password tidak ditemukan atau salah
-                $url=base_url();
-                echo $this->session->set_flashdata('msg','Username Atau Password Salah');
-                redirect($url);
-            }                  
-        }
-    }
+			$this->session->set_userdata($data_session);
  
+			redirect(base_url("C_home"));
+ 
+		}else{
+			echo "Username dan password salah !";
+		}
+	}
+
 	function logout(){
 		$this->session->sess_destroy();
 		redirect(base_url('C_login'));
