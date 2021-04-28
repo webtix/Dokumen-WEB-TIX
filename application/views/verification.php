@@ -15,18 +15,15 @@
 </head>
 <body>
     <h4>WebTix</h4>
-    <form action="<?php echo base_url('C_login/login_user')?>" class="login-form" method="post">
+    <form action="<?php echo base_url('C_login/verifikasi')?>" class="login-form" method="post">
       <div class="kotak rounded mx-auto d-block">
           <div class="login">
               <h3>Login</h3>
-              <label for="username">Username</label>
-              <input class="form-control input" type="text" name="username" placeholder="Username">
-              <input class="form-control input form-password" type="password" name="password" placeholder="Password" id="InputPass">
-              <input type="checkbox" class="form-checkbox">Show Password
+              <label for="code">Masukkan Kode Verifikasi</label>
+              <input class="form-control input" type="text" name="code" placeholder="kode verifikasi" style="margin-bottom: 55px; margin-top:25px;">
+              
               <input type="submit" class="logbtn btn-warning btn" value="Login">
               <br>_________________________________________________</br>
-              <h5 style="margin-top: 5px;">New to WebTix ? Register Now</h5>
-              <a href="<?php echo base_url('C_register')?>" type="button" class="btn btn-warning" >Register</a>
           </div> 
       </div>
     </form>

@@ -4,17 +4,17 @@ class C_login extends CI_Controller {
 	function __construct(){
 		parent::__construct();		
 		$this->load->model('M_Login');
+		$this->load->model('M_email');
 		$this->load->library('form_validation');
 	}
 
-	public function index()
-	{
+	public function index(){
 		$this->load->helper('url');
         $this->load->view("login");
 	}
 
 	#LOGIN.
-	#note : CHECKING USERTYPE NOT FINISHED
+	#note : CHECKING USERTYPE still NOT FINISHED
 	function login_user(){
 		$username = $this->input->post('username');
 		$password = $this->input->post('password');
@@ -33,12 +33,18 @@ class C_login extends CI_Controller {
 				);
  
 			$this->session->set_userdata($data_session);
- 
-			redirect(base_url("C_home"));
- 
+			$verif = $this->M_email->confirm_login();
+ 			redirect(base_url("C_email"),$verif);
+
 		}else{
 			echo "Username dan password salah !";
 		}
+	}
+
+	function verifikasi(){
+		$kode = $this->input->post('code');
+
+		redirect(base_url("C_home"));
 	}
 
 	function logout(){
