@@ -31,9 +31,9 @@
       </div>
     </form>
     
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script type="text/javascript">
-    $(document).ready(function(){       
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
+<script type="text/javascript"> 
+    $(document).ready(function(){  /**dapat melihat password saat melakukan login (showpassword) */  
         $('.form-checkbox').click(function(){
             if($(this).is(':checked')){
                 $('.form-password').attr('type','text');
