@@ -16,7 +16,7 @@
                     <div class="card-body" >
                         <div class="media position-relative">
                             <div class="card-body">
-                                <img src="assets/img/Contoh Poster 1.jpg" class="card-img-top" 
+                                <img src="<?php echo base_url().'assets/img/'.$f['poster']; ?>" class="card-img-top" 
                                         style="margin-top:5px; height: 352px; width: 245px;">
                                 <h5 class="card-text"><?= $f['RatingUmur'];?></h5>
                             </div>

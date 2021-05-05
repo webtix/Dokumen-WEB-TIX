@@ -1,10 +1,16 @@
 <?php 
- 
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+require 'C:\xampp\composer\vendor\autoload.php';
 class M_Login extends CI_Model{	
     private $_table = "user";
 
     function cek_login($table,$where){		
 		return $this->db->get_where($table,$where);
+	}
+
+	function get_email($table, $username){
+		return $this->db->get_where($table);
 	}
 
     public function doLogin(){
@@ -29,6 +35,9 @@ class M_Login extends CI_Model{
         }
     	return false;
     }
+
+    
+
 
     // alternate Method of login
     function log_user($username,$password){

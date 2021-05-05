@@ -21,7 +21,7 @@
 	<h3 style="text-align: center;">Registrasi Pengguna Baru</h3>
 	<div class="regist rounded mx-auto d-block">
 	       	<div class="detail">
-				<h2 style="text-align:center">Detail Film</h2>	
+				<h2 style="text-align:center">Masukkan Data Pengguna</h2>	
 	        	<form action="">
 					<div style="margin-top:5px; margin-left:10px;">username</div>
 						<input class="form-control input" type="text" name="username" placeholder="masukkan username">

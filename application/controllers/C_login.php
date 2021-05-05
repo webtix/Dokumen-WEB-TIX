@@ -31,10 +31,13 @@ class C_login extends CI_Controller {
 				'nama' => $username,
 				'status' => "login"
 				);
- 
+
+ 			$email = $cek->result_array();;
+			
 			$this->session->set_userdata($data_session);
-			$verif = $this->M_email->confirm_login();
- 			redirect(base_url("C_email"),$verif);
+			#$verif = $this->M_email->confirm_login($email['email']);
+ 			#redirect(base_url("C_email"),$verif);
+ 			redirect(base_url("C_home"));
 
 		}else{
 			echo "Username dan password salah !";

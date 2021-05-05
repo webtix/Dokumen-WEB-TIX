@@ -30,13 +30,13 @@
                     <a class="nav-link mr-3 menu" href="<?php echo base_url() ?>">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item ">
-                    <a class="nav-link mr-3 menu" href="<?php echo base_url('index.php/C_klinik/page_pasien') ?>">Film</a>
+                    <a class="nav-link mr-3 menu" href="<?php echo base_url() ?>">Film</a>
                 </li>
                 <li class="nav-item ">
-                    <a class="nav-link mr-3 menu" href="<?php echo base_url('index.php/C_klinik/page_pasien') ?>">Accounts</a>
+                    <a class="nav-link mr-3 menu" href="<?php echo base_url() ?>">Accounts</a>
                 </li>
                 <li class="nav-item ">
-                    <a class="nav-link mr-3 menu" href="<?php echo base_url('index.php/C_klinik/page_obat') ?>">Log out</a>
+                    <a class="nav-link mr-3 menu" href="<?php echo base_url('C_login/logout') ?>">Log out</a>
                 </li>
                 </ul>
             </div>

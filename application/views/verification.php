@@ -24,6 +24,7 @@
               
               <input type="submit" class="logbtn btn-warning btn" value="Login">
               <br>_________________________________________________</br>
+              <a href="<?php echo base_url()?>" type="button" class="btn btn-warning">Back</a>
           </div> 
       </div>
     </form>
