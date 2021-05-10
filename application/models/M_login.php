@@ -1,7 +1,7 @@
 <?php
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
-require 'C:\xampp\composer\vendor\autoload.php';
+require 'D:\xampp\composer\vendor\autoload.php';
 class M_Login extends CI_Model{	
     private $_table = "user";
 

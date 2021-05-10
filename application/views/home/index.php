@@ -1,4 +1,4 @@
-<div class="container dokter">
+<div class="container">
     <div class="row">
         <div class="col">
             <h1 style="margin-top:15px; text-align: center; font-size:40px">Now Playing</h1>
@@ -16,11 +16,12 @@
                     <div class="card-body" >
                         <div class="media position-relative">
                             <div class="card-body">
-                                <img src="<?php echo base_url().'assets/img/'.$f['poster']; ?>" class="card-img-top" 
-                                        style="margin-top:5px; height: 352px; width: 245px;">
-                                <h5 class="card-text"><?= $f['RatingUmur'];?></h5>
+                                <img src="<?php echo base_url().'assets/img/'.$f['poster']; ?>" class="card-img" style="margin-top:5px; height: 352px; width: 245px;">
+                                
                             </div>
                             <div class="media-body">
+                                <h5 class="card-text" style="Color:grey">Rating Umur : <?= $f['RatingUmur'];?></h5>
+                                <h5 class="card-text" style="Color:grey">Durasi : <?= $f['Durasi'];?> Menit</h5>
                                 <h5>Sinopsis</h5>
                                 <p><?= $f['Sinopsis'];?></p>
                             </div>

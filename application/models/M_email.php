@@ -4,7 +4,7 @@
 	 */
 	use PHPMailer\PHPMailer\PHPMailer;
 	use PHPMailer\PHPMailer\Exception;
-	require 'C:\xampp\composer\vendor\autoload.php';
+	require 'D:\xampp\composer\vendor\autoload.php';
 	class M_email extends CI_Model{
 	
 	/**

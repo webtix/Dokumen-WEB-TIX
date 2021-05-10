@@ -24,6 +24,10 @@ body {
 	background-color: white;
 }
 
+.biodata {
+	margin-top:5px; margin-left:10px;
+}
+
 .gambar {
 	width: 400px;
 	height: 399px;

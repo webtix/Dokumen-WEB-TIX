@@ -18,28 +18,29 @@
 
 </head>
 <body>
-	<h3 style="text-align: center;">Registrasi Pengguna Baru</h3>
+	<h2 style="text-align: center;">Registrasi Pengguna Baru</h2>
 	<div class="regist rounded mx-auto d-block">
 	       	<div class="detail">
-				<h2 style="text-align:center">Masukkan Data Pengguna</h2>	
-	        	<form action="">
-					<div style="margin-top:5px; margin-left:10px;">username</div>
+				
+	        	<form action="<?php echo base_url('C_register/tambah_user')?>" method="post">
+					<div class="biodata">Username</div>
 						<input class="form-control input" type="text" name="username" placeholder="masukkan username">
-					<div style="margin-top:5px; margin-left:10px;">Password</div>
+					<div class="biodata">Password</div>
 						<input class="form-control input" type="password" name="password" placeholder="password">
-					<div style="margin-top:5px; margin-left:10px;">Nama</div>
+					<h2 style="text-align:center">________________________</h2>	
+					<div class="biodata">Nama</div>
 						<input class="form-control input" type="text" name="nama" placeholder="nama">
-						
-					<div style="margin-top:5px; margin-left:10px;">Email</div>
+					<div class="biodata">Email</div>
 						<input class="form-control input" type="text" name="email" placeholder="email">	
-					<div style="margin-top:5px; margin-left:10px;">HP</div>
-						<input class="form-control input" type="text" name="HP" placeholder="No. HP">
+					<div class="biodata">No. HP</div>
+						<input class="form-control input" type="text" name="hp" placeholder="No. HP">
+					<div class="biodata">TTL</div>
+						<input class="form-control input" type="text" name="ttl" placeholder="Tempat, Tanggal Lahir">
+					<button type="submit" name="tambah" class="btn btn-warning float-right tombol">Daftar</button>
       				<a href="<?php echo base_url()?>">
 						<button type="button" class="btn btn-warning float-left tombol" >Kembali</button>
 					</a>
-					<a href="">
-		        		<button type="button" class="btn btn-warning float-right tombol" href="">Daftar</button>
-		        	</a>
+		        		
 	        	</form>
 			</div>
 	</div>

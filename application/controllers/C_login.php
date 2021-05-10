@@ -18,6 +18,7 @@ class C_login extends CI_Controller {
 	function login_user(){
 		$username = $this->input->post('username');
 		$password = $this->input->post('password');
+		
 		$where = array(
 			'username' => $username,
 			'password' => $password
