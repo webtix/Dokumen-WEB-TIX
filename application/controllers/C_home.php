@@ -4,18 +4,30 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class C_home extends CI_Controller {
 	function __construct(){
 		parent::__construct();		
-		$this->load->model('M_film');
- 
+		$this->load->model('M_home');
+        $this->load->model('M_login');
+        $this->load->library('session');
 	}
 
 	public function index()
 	{
-		$data['film'] = $this->M_film->getFilm();
+		$data['film'] = $this->M_home->getFilm();
+        $data['user'] = $this->session->flashdata('user');
 
 		$this->load->view('templates/header');
 		$this->load->view('home/index', $data);
 		$this->load->view('templates/footer');
 	}
+
+    public function profile()
+    {
+        $user = $this->session->flashdata('data_user');
+        
+        $this->load->view('templates/header');
+        $this->load->view('profile', $user);
+        $this->load->view('templates/footer');
+    }
+
 	public function tambah()
     {
         $this->form_validation->set_rules('NamaFilm','Nama Film','required');

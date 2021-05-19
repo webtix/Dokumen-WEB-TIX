@@ -1,6 +1,6 @@
 <?php 
  
-class M_film extends CI_Model{	
+class M_home extends CI_Model{	
     
 	function cek_login($table,$where){		
 		return $this->db->get_where($table,$where);

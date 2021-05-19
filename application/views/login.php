@@ -26,7 +26,7 @@
               <input type="submit" class="logbtn btn-warning btn" value="Login">
               <br>_________________________________________________</br>
               <h5 style="margin-top: 5px;">New to WebTix ? Register Now</h5>
-              <a href="<?php echo base_url('C_register')?>" type="button" class="btn btn-warning" >Register</a>
+              <a href="<?php echo base_url('C_auth/register')?>" type="button" class="btn btn-warning" >Register</a>
           </div> 
       </div>
     </form>

@@ -22,7 +22,7 @@
 	<div class="regist rounded mx-auto d-block">
 	       	<div class="detail">
 				
-	        	<form action="<?php echo base_url('C_register/tambah_user')?>" method="post">
+	        	<form action="<?php echo base_url('C_auth/tambah_user')?>" method="post">
 					<div class="biodata">Username</div>
 						<input class="form-control input" type="text" name="username" placeholder="masukkan username">
 					<div class="biodata">Password</div>

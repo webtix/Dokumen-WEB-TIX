@@ -27,13 +27,13 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                 <li class="nav-item active ">
-                    <a class="nav-link mr-3 menu" href="">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link mr-3 menu" href="<?php echo base_url('C_home') ?>">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item ">
                     <a class="nav-link mr-3 menu" href="<?php echo base_url() ?>">Film</a>
                 </li>
                 <li class="nav-item ">
-                    <a class="nav-link mr-3 menu" href="<?php echo base_url() ?>">Profil</a>
+                    <a class="nav-link mr-3 menu" href="<?= base_url('C_home/profile');?>">Profil</a>
                 </li>
                 <li class="nav-item ">
                     <a class="nav-link mr-3 menu" href="<?php echo base_url('C_login/logout');?>">Log out</a>
