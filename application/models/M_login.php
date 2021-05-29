@@ -1,7 +1,9 @@
 <?php
 use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 require 'D:\xampp\composer\vendor\autoload.php';
+
 class M_Login extends CI_Model{	
     private $_table = "user";
 
@@ -43,11 +45,12 @@ class M_Login extends CI_Model{
      * @param String $email
      *  
      */
-    function confirm_login($email)
-    {
+    function confirm_login()
+    {   
+        $email = $this->session->flashdata('email_user');
         $code = rand(1111 , 9999);
 
-        $mail = new PHPMailer();
+        $mail = new PHPMailer(true);
         $mail->isSMTP();
         $mail->Host = 'smtp.gmail.com'; #host untuk mengirimkan email
         $mail->Port = 587; #port yang digunakan
@@ -57,7 +60,8 @@ class M_Login extends CI_Model{
         $mail->Password = 'hauzanjelek';
 
         $mail->setFrom('webtix.id@gmail.com'); #email sender / pengirim
-        $mail->addAddress($email); #email test
+        $mail->addAddress($email);
+
 
         $mail->Subject = 'Email Confirmation'; #subject email yang dikirim
         #$mail->Body    = 'This is email confirmation for your login on our website Webtix.id, please do not share this code to anyone claiming from Webtix.id';
@@ -71,7 +75,15 @@ class M_Login extends CI_Model{
         }   
     }   
 
+public function tambahDataUser($data)
+    {
+        $this->db->insert('user',$data);
+    }
 
+
+/**
+ * SOME OF THESE ARE UNUSED/EXPERIMENTAL LINE OF CODES
+ */
     // alternate Method of login
     function log_user($username,$password){
         $where = array(

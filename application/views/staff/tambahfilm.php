@@ -3,16 +3,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tambah Film</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/tambah.css">
+
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>/assets/css/tambah.css">
+
     <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Concert+One&display=swap" rel="stylesheet">
 </head>
 <body>
 	<h3 style="text-align: center;">Tambah Film Baru</h3>
-	<div class="kotak rounded mx-auto d-block">
+	<div class="kotaktambah rounded mx-auto d-block">
 	       	<div class="detail">
 				<h2 style="text-align:center">Detail Film</h2>	
-	        	<form action="<?php echo base_url();'C_staff/tambahfilm'?>" method="post">
+	        	<form action="<?php echo base_url('C_staff/tambah');?>" method="post">
 					<div style="margin-top:5px; margin-left:10px;">Nama Film</div>
 					<input class="form-control input" type="text" placeholder="Nama Film">
 					<div style="margin-top:5px; margin-left:10px;">Sinopsis</div>
@@ -51,17 +53,18 @@
 					  	<input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="ruang5">
 					  	<label class="form-check-label" for="inlineCheckbox1">Ruang 5</label>
 					</div>
-	        	</form>
+	        	
 			</div>
 			<div class="poster">
 				<div class="gambar_poster">
 				</div>
 				<input type="file" class="form-control-file" id="exampleFormControlFile1">
 				<div class="tombol">
-					<button type="button" class="btn btn-warning float-right " style="margin-top:15px;width: 150px">Tambahkan Film</button>
-		        	<a href="<?php echo base_url().'index.php/C_staff'?>">
+					<input type="submit" class="btn btn-warning float-right " style="margin-top:15px;width: 150px" value="Tambahkan Film"></button>
+		        	<a href="<?php echo base_url('C_staff')?>">
 						<button type="button" class="btn btn-warning float-right " style="margin-top:15px; margin-right: 15px ;width: 80px;">Kembali</button>
 					</a>
+				</form>
 				</div>
 			</div>
 	</div>

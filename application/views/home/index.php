@@ -6,7 +6,7 @@
 
         </div>
     </div>
-    <?php foreach ($film as $f) :?>
+    <?php foreach ($preview as $f) :?>
         <div class="row mt-2">
             <div class="col">
                 <div class="card">
@@ -31,22 +31,4 @@
             </div>
         </div>
     <?php endforeach;?>
-    <nav aria-label="...">
-                    <ul class="pagination mt-4 justify-content-center">
-                        <li class="page-item disabled">
-                        <span class="page-link">Previous</span>
-                        </li>
-                        <li class="page-item"><a class="page-link" href="#">1</a></li>
-                        <li class="page-item disabled" aria-current="page">
-                        <span class="page-link">
-                            2
-                            <span class="sr-only">(current)</span>
-                        </span>
-                        </li>
-                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                        <li class="page-item">
-                        <a class="page-link" href="#">Next</a>
-                        </li>
-                    </ul>
-                </nav>
 </div>

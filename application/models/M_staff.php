@@ -7,17 +7,6 @@ class M_staff extends CI_model
         return $this->db->get('film')->result_array();
     }
 
-    public function tambahDatafilm($foto)
-    {
-        $data = [
-            'NamaFilm' => $this->input->post('id_dokter',true),
-            'Durasi' => $this->input->post('nama',true),
-            'RatingUmur' => $this->input->post('spesialis',true),
-            'Sinopsis' =>$this->input->post('ktp/kk',true),
-
-        ];
-        $this->db->insert('film',$data);
-    }
 
     private function _uploadImage(){
         $config['upload_path']          = './upload/product/';
@@ -42,5 +31,18 @@ class M_staff extends CI_model
             $filename = explode(".", $product->image)[0];
             return array_map('unlink', glob(FCPATH."upload/product/$filename.*"));
         }
+    }
+
+    public function tambahDataFilm($poster) #untuk melakukan penambahan datafilm
+    {
+        $data = [
+            'NamaFilm' => $this->input->post('nama',true), #mengambil data nama film dari input
+            'Durasi' => $this->input->post('durasi',true), #mengambil data Durasi film dari input
+            'RatingUmur' => $this->input->post('ratingumur',true), #mengambil data Rating film dari input
+            'Sinopsis' => $this->input->post('sinopsis',true), #mengambil data sinopsis film dari input
+            'foto' => $poster #mengambil data poster film dari input
+        ];
+
+        $this->db->insert('film',$data);
     }
 }

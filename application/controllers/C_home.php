@@ -11,51 +11,36 @@ class C_home extends CI_Controller {
 
 	public function index()
 	{
-		$data['film'] = $this->M_home->getFilm();
-        $data['user'] = $this->session->flashdata('user');
+		$data['preview'] = $this->db->query("SELECT * FROM film LIMIT 1;")->result_array();
 
 		$this->load->view('templates/header');
-		$this->load->view('home/index', $data);
+		$this->load->view('/home/index', $data);
 		$this->load->view('templates/footer');
 	}
 
     public function profile()
     {
-        $user = $this->session->flashdata('data_user');
+        $data['user'] = $this->session->flashdata('data_user');
+        #echo print_r($user,true);
         
         $this->load->view('templates/header');
-        $this->load->view('profile', $user);
+        $this->load->view('profile', $data);
         $this->load->view('templates/footer');
     }
 
-	public function tambah()
+    public function booking()
     {
-        $this->form_validation->set_rules('NamaFilm','Nama Film','required');
-        $this->form_validation->set_rules('Durasi','Durasi','required|numeric');
-        $this->form_validation->set_rules('RatingUmur','Rating Umur','required');
-        $this->form_validation->set_rules('Sinopsis','Sinopsis','required');
+        $this->load->view('bookingfilm');
+        $this->load->view('templates/footer');
+    }
 
-
-        if ($this->form_validation->run() == FALSE) {
-            $this->load->view('templates/header');
-            $this->load->view('staff/tambahfilm');
-            $this->load->view('templates/footer');
-        }else{
-            $config['upload_path']          = './upload/poster/';
-            $config['allowed_types']        = 'gif|jpg|png|jpeg';
-            $config['max_size']             = 4096; 
-            $config['file_name']            = $_FILES['foto']['name'];
-            $this->load->library('upload',$config);
-
-            if (!$this->upload->do_upload('foto')) {
-                $data['error'] = $this->upload->display_errors();
-                $this->load->view('staff/tambahfilm',$data);
-            }else{
-                $foto = $this->upload->data('file_name');
-                $this->Obat_model->tambahDataFilm($foto);
-                $this->session->set_flashdata('flash','ditambahkan');
-                redirect('C_home');
-            }
-        }
+    public function view_film()
+    {
+        $data['film'] = $this->M_home->getFilm();
+        #echo print_r($user,true);
+        
+        $this->load->view('templates/header');
+        $this->load->view('film', $data);
+        $this->load->view('templates/footer');
     }
 }

@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Concert+One&display=swap" rel="stylesheet">
 
-    <script type = 'text/javascript' src = "<?php echo base_url();?>/assets/js/script.js"></script> 
+    <script type ='text/javascript' src = "<?php echo base_url();?>/assets/js/script.js"></script> 
 </head>
 <body>
     <h4>WebTix</h4>
@@ -19,14 +19,14 @@
       <div class="kotak rounded mx-auto d-block">
           <div class="login">
               <h3>Login</h3>
-              <label for="username">Username</label>
               <input class="form-control input" type="text" name="username" placeholder="Username">
               <input class="form-control input form-password" type="password" name="password" placeholder="Password" id="InputPass">
               <input type="checkbox" class="form-checkbox">Show Password
-              <input type="submit" class="logbtn btn-warning btn" value="Login">
               <br>_________________________________________________</br>
+              <input type="submit" class="logbtn btn-warning btn" value="Sign In">
+              <input type="submit" class="logbtn btn-warning btn" value="Forgot Password">
               <h5 style="margin-top: 5px;">New to WebTix ? Register Now</h5>
-              <a href="<?php echo base_url('C_auth/register')?>" type="button" class="btn btn-warning" >Register</a>
+              <a href="<?php echo base_url('C_login/register')?>" type="button" class="btn btn-warning" >Register</a>
           </div> 
       </div>
     </form>

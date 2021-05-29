@@ -1,4 +1,8 @@
 <?php
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+require 'D:\xampp\composer\vendor\autoload.php';
 
 class C_login extends CI_Controller {
 	function __construct(){
@@ -32,23 +36,31 @@ class C_login extends CI_Controller {
  			#$usertype = mysqel_fetch_row($cek);
 
 			$data_session = array(
-				'nama' => $username,
+				'nama' => $userdata[0]['Nama'],
+				'email' => $userdata[0]['Email'],
+				'hp' => $userdata[0]['HP'],
+				'TTL' => $userdata[0]['TTL'],
 				'status' => "login"
-				);
-
+			);
  			
 			$this->session->set_userdata($data_session);
 			$this->session->set_flashdata('data_user',$userdata[0]);
 
-			$verif = $this->M_Login->confirm_login($userdata[0]['Email']);
+			#$verif = $this->M_Login->confirm_login();
 			#echo '<br>'.print_r($userdata, true);
-			#echo '<br>'.$userdata[0]['Email'];
+			#echo '<br>'.$data_session['email'];
 
- 			redirect(base_url("C_email"),$verif);
- 			#redirect(base_url("C_home"));
+ 			#redirect(base_url("C_email"),$verif);
+ 			if($userdata[0]['TipeUser'] == 'admin'){
+ 				redirect(base_url('C_Staff'));
+ 			}
+ 			else if($userdata[0]['TipeUser'] == 'user'){
+ 				redirect(base_url("C_home"));	
+ 			}
+ 			
 
 		}else{
-			echo "Username dan password salah !";
+			redirect(base_url());
 		}
 	}
 
@@ -82,22 +94,24 @@ class C_login extends CI_Controller {
 			$this->load->view('templates/footer');
         }else{
         	$query = $this->db->get('user');
-			$rows = $query->result_array();
+			$rows = $query->num_rows();
 
 			// $name = $this->input->post('username',true);
 			// echo $name;
 
-			
-	        $data = [	
-	            'username' => $this->input->post('username',true),
-	            'password' => password_hash($this->input->post('password',true), PASSWORD_DEFAULT),
+	        $user_baru = [
+	            'Username' => $this->input->post('username',true),
+	            'Password' => password_hash($this->input->post('password',true), PASSWORD_DEFAULT),
 	            'Nama' =>$this->input->post('nama',true),
-	            'email' =>$this->input->post('email',true),
+
+	            'Email' =>$this->input->post('email',true),
 	            'HP' =>$this->input->post('hp',true),
 	            'TipeUser' =>'user',
 	            'TTL' =>$this->input->post('ttl',true),
+	            'foto_profil' => 'default.png'
         	];
-            $this->M_regist->tambahDataUser($data);
+        	#echo print_r($user_baru,true);
+            $this->M_Login->tambahDataUser($user_baru);
             redirect(base_url());
         }	
     }
