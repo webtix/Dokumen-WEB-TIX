@@ -10,9 +10,7 @@
         <div class="row mt-2">
             <div class="col">
                 <div class="card">
-                    <div class="card-header" style="font-size: 24px ;color: darkblue; text-align: center;">
-                        <?= $f['NamaFilm']?>
-                    </div>
+                    <a class="card-header" style="font-size: 24px ;color: darkblue; text-align: center;"><?= $f['NamaFilm']?></a>
                     <div class="card-body" >
                         <div class="media position-relative">
                             <div class="card-body">

@@ -20,14 +20,14 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-warning">
         <DIV class="container">
-            <a class="navbar-brand" href="<?php echo base_url('C_staff/tambahfilm')?>"><h4>WebTix</h4></a>
+            <a class="navbar-brand" href="<?php echo base_url('C_home')?>"><h4>WebTix</h4></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                 <li class="nav-item active ">
-                    <a class="nav-link mr-3 menu" href="<?php echo base_url('C_home/booking') ?>">Home</a>
+                    <a class="nav-link mr-3 menu" href="<?php echo base_url('C_home') ?>">Home</a>
                 </li>
                 <li class="nav-item active">
                     <a class="nav-link mr-3 menu" href="<?= base_url('C_home/view_film');?>">Film</a>
@@ -36,7 +36,7 @@
                     <a class="nav-link mr-3 menu" href="<?= base_url('C_home/profile');?>">Profil</a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link mr-3 menu" href="<?php echo base_url('C_login/logout');?>">Log out</a>
+                    <a class="nav-link mr-3 menu" href="<?php echo base_url('C_auth/logout');?>">Log out</a>
                 </li>
                 </ul>
             </div>

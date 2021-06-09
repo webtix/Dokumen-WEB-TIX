@@ -14,7 +14,7 @@ class C_home extends CI_Controller {
 		$data['preview'] = $this->db->query("SELECT * FROM film LIMIT 1;")->result_array();
 
 		$this->load->view('templates/header');
-		$this->load->view('/home/index', $data);
+		$this->load->view('home/index', $data);
 		$this->load->view('templates/footer');
 	}
 
@@ -28,9 +28,11 @@ class C_home extends CI_Controller {
         $this->load->view('templates/footer');
     }
 
-    public function booking()
-    {
-        $this->load->view('bookingfilm');
+    public function booking($id)
+    {   
+        $data['detailfilm'] = $this->M_home->getFilmById($id);
+        $this->load->view('templates/header');
+        $this->load->view('home/bookingfilm',$data);
         $this->load->view('templates/footer');
     }
 

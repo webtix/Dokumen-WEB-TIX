@@ -15,7 +15,7 @@
 </head>
 <body>
     <h4>WebTix</h4>
-    <form action="<?php echo base_url('C_login/login_user')?>" class="login-form" method="post">
+    <form action="<?php echo base_url('C_auth/login_user')?>" class="login-form" method="post">
       <div class="kotak rounded mx-auto d-block">
           <div class="login">
               <h3>Login</h3>

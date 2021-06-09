@@ -11,6 +11,7 @@
     <!-- My CSS -->
     <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>/assets/css/header.css">
 
+
     <!-- My Font Google -->
     <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap" rel="stylesheet">
@@ -18,25 +19,25 @@
     <title>WebTix Staff</title>
 </head>
 <body>
-        <nav class="navbar navbar-expand-lg navbar-light bg-warning">
+    <nav class="navbar navbar-expand-lg navbar-light bg-warning">
         <DIV class="container">
-            <a class="navbar-brand" href="#"><h4>WebTix Staff</h4></a>
+            <a class="navbar-brand" href="<?= base_url('C_staff');?>"><h4>WebTix Staff</h4></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                 <li class="nav-item active ">
-                    <a class="nav-link mr-3 menu" href="<?php echo base_url('C_home/booking') ?>">Home</a>
+                    <a class="nav-link mr-3 menu" href="#">Home</a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link mr-3 menu" href="<?= base_url('C_home/view_film');?>">Film</a>
+                    <a class="nav-link mr-3 menu" href="<?= base_url('C_staff/view_film');?>">Film</a>
                 </li>
                 <li class="nav-item ">
-                    <a class="nav-link mr-3 menu" href="<?php echo base_url() ?>">Accounts</a>
+                    <a class="nav-link mr-3 menu" href="#">Accounts</a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link mr-3 menu" href="<?php echo base_url('C_login/logout');?>">Log out</a>
+                    <a class="nav-link mr-3 menu" href="<?php echo base_url('C_auth/logout');?>">Log out</a>
                 </li>
                 </ul>
             </div>

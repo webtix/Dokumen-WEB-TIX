@@ -14,7 +14,7 @@
 	<div class="kotaktambah rounded mx-auto d-block">
 	       	<div class="detail">
 				<h2 style="text-align:center">Detail Film</h2>	
-	        	<form action="<?php echo base_url('C_staff/tambah');?>" method="post">
+	        	<form action="<?php echo base_url(). 'C_staff/tambah';?>" method="post">
 					<div style="margin-top:5px; margin-left:10px;">Nama Film</div>
 					<input class="form-control input" type="text" placeholder="Nama Film">
 					<div style="margin-top:5px; margin-left:10px;">Sinopsis</div>

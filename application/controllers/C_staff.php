@@ -54,5 +54,15 @@ class C_staff extends CI_Controller {
             }
         }
     }
+
+    public function view_film()
+    {
+        $data['film'] = $this->M_home->getFilm();
+        #echo print_r($user,true);
+        
+        $this->load->view('templates/header-staff');
+        $this->load->view('film', $data);
+        $this->load->view('templates/footer');
+    }
 	
 }
