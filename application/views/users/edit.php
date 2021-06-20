@@ -42,6 +42,7 @@
                     <div class="form-group col-md-6">
                         <label>Tipe User</label>
                         <select name="TipeUser" class="form-control" required>
+                            <option value="staff" value="<?php echo $val['TipeUser'] == 'user' ? 'selected' : '' ?>">User</option>
                             <option value="staff" value="<?php echo $val['TipeUser'] == 'staff' ? 'selected' : '' ?>">Staff</option>
                             <option value="manager" value="<?php echo $val['TipeUser'] == 'manager' ? 'selected' : '' ?>">Manager</option>
                         </select>

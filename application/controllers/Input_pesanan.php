@@ -63,7 +63,7 @@ class Input_pesanan extends CI_Controller
 	public function add()
 	{
 		$data['bioskop'] = $this->Bioskop_model->getData(null, 'bioskop')->result_array();
-		$data['film'] = $this->Film_model->getData(null, 'film')->result_array();
+		$data['film'] = $this->Film_model->getData('film')->result_array();
 
 		$this->load->view('templates/header');
 		$this->load->view('input_pesanan/add', $data);

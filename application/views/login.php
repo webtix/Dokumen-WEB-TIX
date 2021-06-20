@@ -17,7 +17,7 @@
 		<div class="kotak rounded mx-auto d-block">
 			<div class="login">
 				<h3>Login</h3>
-
+				<p style="color: red"><?php echo $this->session->flashdata('status'); ?></p>
 				<input class="form-control input" type="text" name="username" placeholder="Username">
 				<input class="form-control input form-password" type="password" name="password" placeholder="Password" id="InputPass">
 				<input type="checkbox" class="form-checkbox"> Show Password

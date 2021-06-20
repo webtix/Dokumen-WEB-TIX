@@ -17,7 +17,7 @@ class Home extends CI_Controller
 
 	public function index()
 	{
-		$data['preview'] = $this->Film_model->getData(null, 'film', 1)->result_array();
+		$data['preview'] = $this->Film_model->getData('film', null,  2)->result_array();
 
 		$this->load->view('templates/header');
 		$this->load->view('home/index', $data);

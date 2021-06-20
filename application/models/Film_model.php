@@ -2,7 +2,12 @@
 
 class Film_model extends CI_Model
 {	
-	public function getData($select = null, $table, $limit = null, $where = null, $join = null)
+	public function cek_film($table, $where)
+	{		
+		return $this->db->get_where($table, $where);
+	}
+
+	public function getData($table, $select = null, $limit = null, $where = null, $join = null)
 	{	
 		if(!empty($select)){
 			$this->db->select($select);

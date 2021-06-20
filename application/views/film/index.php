@@ -2,12 +2,13 @@
     <div class="row">
         <div class="col">
             <h1 style="margin-top:15px; text-align: center; font-size:40px">List Film</h1>
+            <p style="text-align: center; color: red;"><?php echo $this->session->flashdata('statusfilm'); ?></p>
         </div>
     </div>
 
     <div class="row">
         <div class="col-md-12">
-            <a href="<?php echo base_url('film/add') ?>" class="btn btn-primary float-right">Tambah data</a>
+            <a href="<?php echo base_url('film/add') ?>" class="btn btn-primary float-right">Tambah Film</a>
         </div>
     </div>
     
@@ -26,7 +27,7 @@
                 <tbody>
                     <?php foreach($films as $key => $film){ ?>
                         <tr>
-                            <td><?php echo $key + 1 ?></td>
+                            <td><?php echo $key?></td>
                             <td><?php echo $film['NamaFilm'] ?></td>
                             <td><?php echo $film['Durasi'] ?></td>
                             <td><?php echo $film['RatingUmur'] ?></td>

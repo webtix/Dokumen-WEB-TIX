@@ -7,7 +7,7 @@
 
     <div class="row">
         <div class="col-md-12">
-            <a href="<?php echo base_url('laporan') ?>" class="btn btn-primary float-right">Kembali</a>
+            <a href="<?php echo base_url('home') ?>" class="btn btn-primary float-right">Kembali</a>
         </div>
     </div>
 

@@ -12,6 +12,7 @@ class Login extends CI_Controller
 		}
 
 		$this->load->model('User_model');
+		
 	}
 
 	public function index()
@@ -52,6 +53,7 @@ class Login extends CI_Controller
 
 			redirect(base_url('home'));
 		}else{
+			$this->session->set_flashdata('status','Username & Password Salah');
 			redirect(base_url('login'));
 		}
 	}

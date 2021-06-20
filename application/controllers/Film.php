@@ -20,7 +20,7 @@ class Film extends CI_Controller
 
 	public function index()
 	{
-		$data['films'] = $this->Film_model->getData(null, 'film')->result_array();
+		$data['films'] = $this->Film_model->getData('film')->result_array();
 
 		$this->load->view('templates/header');
 		$this->load->view('film/index', $data);
@@ -48,14 +48,26 @@ class Film extends CI_Controller
         $config['allowed_types']        = 'gif|jpg|png|jpeg';
         $config['max_size']             = 4096; 
 
-		$this->load->library('upload', $config);
-		if ($this->upload->do_upload('poster')){
-			$this->Film_model->insert('film', $data);
+        //error handling
+        $checker = $this->Film_model->cek_film("film", array('NamaFilm' => $data['NamaFilm']))->result_array();
+        #$checker = $this->db->query('SELECT * FROM `film` WHERE (NamaFilm= "'.$data['NamaFilm'].'")')->result_array();
 
-			redirect(base_url('film'));
-		}else{
-			redirect(base_url('film/add'));
-		}
+		if ($data['Durasi'] > 120){
+        	$this->session->set_flashdata('statusfilm','gagal menambahkan film, durasi film lebih dari 2 jam');
+        	redirect(base_url('film'));
+        } else if ($data['NamaFilm'] == $checker['NamaFilm']){
+        	$this->session->set_flashdata('statusfilm','gagal menambahkan film, durasi film lebih dari 2 jam');
+        	redirect(base_url('film'));
+        } else {
+	        	$this->load->library('upload', $config);
+			if ($this->upload->do_upload('poster')){
+				$this->Film_model->insert('film', $data);
+
+				redirect(base_url('film'));
+			}else{
+				redirect(base_url('film/add'));
+			}
+        }
 	}
 
 	public function edit($id)

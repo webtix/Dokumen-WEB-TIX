@@ -19,6 +19,7 @@
 </head>
 <body>
 	<h2 style="text-align: center; margin-top: 40px;">Registrasi Pengguna Baru</h2>
+	<p style="text-align: center; margin-top: 15px; color: red"><?php echo $this->session->flashdata('status'); ?></p>
 	<div class="regist rounded mx-auto d-block mt-5">
 	       	<div class="detail">
 	        	<form action="<?php echo base_url('register/store')?>" method="post">

@@ -24,7 +24,13 @@
 <body>
 	<nav class="navbar navbar-expand-lg navbar-light bg-warning">
 		<DIV class="container">
-			<a class="navbar-brand" href="<?php echo base_url('home')?>"><h4>WebTix</h4></a>
+			<?php if($this->session->TipeUser == 'staff'){ ?>
+				<a class="navbar-brand" href="<?php echo base_url('home')?>"><h4>Dashboard Staff</h4></a>
+			<?php }else if($this->session->TipeUser == 'manager'){ ?>
+				<a class="navbar-brand" href="<?php echo base_url('home')?>"><h4>Dashboard Manager</h4></a>
+			<?php }else if($this->session->TipeUser == 'user'){ ?>
+				<a class="navbar-brand" href="<?php echo base_url('home')?>"><h4>WebTix</h4></a>
+			<?php } ?>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
@@ -35,15 +41,18 @@
 					</li>
 					<?php if($this->session->TipeUser == 'staff'){ ?>
 						<li class="nav-item">
-							<a class="nav-link mr-3 menu" href="<?= base_url('film');?>">Film</a>
+							<a class="nav-link mr-3 menu" href="<?= base_url('film');?>">List Film</a>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link mr-3 menu" href="<?= base_url('verifikasi_pembayaran');?>">Verifikasi Pembayaran</a>
 						</li>
 					<?php }else if($this->session->TipeUser == 'user'){ ?>
 						<li class="nav-item">
-							<a class="nav-link mr-3 menu" href="<?= base_url('input_pesanan');?>">Input pesanan</a>
+							<a class="nav-link mr-3 menu" href="<?= base_url('input_pesanan');?>">Tiket</a>
 						</li>
+						<li class="nav-item">
+						<a class="nav-link mr-3 menu" href="<?= base_url('profile');?>">Profile</a>
+					</li>
 					<?php }else if($this->session->TipeUser == 'manager'){ ?>
 						<li class="nav-item">
 							<a class="nav-link mr-3 menu" href="<?= base_url('laporan');?>">Laporan</a>
@@ -52,9 +61,7 @@
 							<a class="nav-link mr-3 menu" href="<?= base_url('users');?>">Users</a>
 						</li>
 					<?php } ?>
-					<li class="nav-item">
-						<a class="nav-link mr-3 menu" href="<?= base_url('profile');?>">Profile</a>
-					</li>
+					
 					<li class="nav-item">
 						<a class="nav-link mr-3 menu" href="<?php echo base_url('logout');?>">Log out</a>
 					</li>
